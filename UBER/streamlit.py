@@ -12,7 +12,7 @@ from rdkit.Chem import Draw'''
 import matplotlib.pyplot as plt
 # %matplotlib inline
 
-with open('styles.css') as f:
+with open('UBER/styles.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 # Make numpy values easier to read.
