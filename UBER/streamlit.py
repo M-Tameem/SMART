@@ -136,13 +136,13 @@ st.write("Put one of the items in the dataset into our system.")
 user_prediction = st.number_input("Input the line of the ToxDF dataset you would like the AI to predict for:", 1, 10000, 200)
 
 user_prediction = int(user_prediction)
-st.write(f"Your current input is: {user_prediction}")
+st.write(f"Your current row input is: {user_prediction}")
 
 if st.checkbox('ToxDF Dataset'):
     toxey = pd.read_csv('UBER/toxicdf.csv')
     toxey
 
 
-if st.button("Submit your whole thing!"):
+if st.button("Test our model!"):
     prediction(user_prediction)
 
