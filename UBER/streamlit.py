@@ -123,6 +123,13 @@ if st.button('Show preprocessed data'):
     tox_df = pd.read_csv('UBER/toxicdf.csv')
     tox_df
 
+st.write("Here you can see the architecture of our machine-learning model.")
+
+if st.button("Show Model Results"):
+    modelimg = Image.open('UBER/model.png')
+    st.image(modelimg)
+
+
 st.write("Take a look at our training metrics!")
 
 if st.button("Show Model Results"):
@@ -130,6 +137,7 @@ if st.button("Show Model Results"):
     loss = Image.open('UBER/Loss.png')
     st.image(accuracy)
     st.image(loss)
+
 
 st.header("Try It Yourself!")
 st.write("Put one of the items in the dataset into our system.")
