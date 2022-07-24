@@ -7,8 +7,8 @@ from keras.models import load_model
 import numpy as np
 import random
 from PIL import Image
-from rdkit import Chem
-from rdkit.Chem import Draw
+#from rdkit import Chem
+#from rdkit.Chem import Draw
 import matplotlib.pyplot as plt
 # %matplotlib inline
 
@@ -39,13 +39,13 @@ def prediction(x):
     bottles = model.predict((dummy_val_smiles, dummy_val_test,))
     st.write("Your SMILE is: \n", cheese)
 
-    penicillin_g = Chem.MolFromSmiles(cheese)
+    #penicillin_g = Chem.MolFromSmiles(cheese)
 
-    smile_render = Draw.MolToMPL(penicillin_g, size = (200,200), fitImage=True)
-    plt.show()
-    plt.savefig("SMILE_rendering.png", bbox_inches = 'tight')
-    st.image(".\SMILE_rendering.png")
-    st.write("The AI Model's prediction", bottles)
+    #smile_render = Draw.MolToMPL(penicillin_g, size = (200,200), fitImage=True)
+    #plt.show()
+    #plt.savefig("SMILE_rendering.png", bbox_inches = 'tight')
+    #st.image(".\SMILE_rendering.png")
+    #st.write("The AI Model's prediction", bottles)
     st.write("SMART's Prediction is: \n")
     if(bottles >= 0.5):
         st.subheader("Toxic!")
