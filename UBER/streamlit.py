@@ -126,8 +126,8 @@ if st.button('Show preprocessed data'):
 st.write("Take a look at our training metrics!")
 
 if st.button("Show Model Results"):
-    accuracy = Image.open('UBER\Accuracy.png')
-    loss = Image.open('UBER\Loss.png')
+    accuracy = Image.open('UBER/Accuracy.png')
+    loss = Image.open('UBER/Loss.png')
     st.image(accuracy)
     st.image(loss)
 
