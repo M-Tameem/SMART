@@ -7,8 +7,8 @@ from keras.models import load_model
 import numpy as np
 import random
 from PIL import Image
-'''from rdkit import Chem
-from rdkit.Chem import Draw'''
+from rdkit import Chem
+from rdkit.Chem import Draw
 import matplotlib.pyplot as plt
 # %matplotlib inline
 
@@ -18,9 +18,9 @@ with open('UBER/styles.css') as f:
 # Make numpy values easier to read.
 np.set_printoptions(precision=3, suppress=True)
 
-tox_df = pd.read_csv('tcfinalit2.csv')
+tox_df = pd.read_csv('UBER/tcfinalit2.csv')
 
-model = load_model('smartmodel.h5')
+model = load_model('UBER/smartmodel.h5')
 
 # Smiles representation and chemical tests
 SMILES_COL = ["smiles",]
@@ -108,26 +108,26 @@ st.title("What is SMART?")
 st.write("SMART is an AI model that uses the Tox21 dataset to train and predict for the toxicity of a chemical compound.")
 st.write("This is the original dataset.")
 if st.button('Show original Tox21 dataset'):
-    toxicchecker = pd.read_csv('tox21_10k_data_all_pandas.csv')
+    toxicchecker = pd.read_csv('UBER/tox21_10k_data_all_pandas.csv')
     toxicchecker
     st.caption("As it is, the data isn't legible.\n")
 
 st.write("\nAs you might have seen, this wouldn't exactly work too well for our purposes. So, using RDKIT, we modified it. Here's what we got.")
 if st.button('Show modified dataset'):
-    tcfinal = tcfinal = pd.read_csv('tcfinalit2.csv')
+    tcfinal = tcfinal = pd.read_csv('UBER/tcfinalit2.csv')
     tcfinal
     st.caption("That's a lot better!")
 
 st.write("Now it's time to preprocess it. Our demo model uses NLP Tokenization to One-Hot encode the SMILES into something the AI model can train on and predict from.")
 if st.button('Show preprocessed data'):
-    tox_df = pd.read_csv('toxicdf.csv')
+    tox_df = pd.read_csv('UBER/toxicdf.csv')
     tox_df
 
 st.write("Take a look at our training metrics!")
 
 if st.button("Show Model Results"):
-    accuracy = Image.open('.\Accuracy.png')
-    loss = Image.open('.\Loss.png')
+    accuracy = Image.open('UBER\Accuracy.png')
+    loss = Image.open('UBER\Loss.png')
     st.image(accuracy)
     st.image(loss)
 
@@ -139,7 +139,7 @@ user_prediction = int(user_prediction)
 st.write(f"Your current input is: {user_prediction}")
 
 if st.checkbox('ToxDF Dataset'):
-    toxey = pd.read_csv('toxicdf.csv')
+    toxey = pd.read_csv('UBER/toxicdf.csv')
     toxey
 
 
