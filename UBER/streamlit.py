@@ -46,7 +46,7 @@ def prediction(x):
     #plt.savefig("SMILE_rendering.png", bbox_inches = 'tight')
     #st.image(".\SMILE_rendering.png")
     st.write("The AI Model's prediction", bottles)
-    st.write("SMART's Prediction is: \n")
+    st.subheader("SMART's Prediction is:")
     if(bottles >= 0.5):
         st.subheader("Toxic!")
     else :
@@ -140,7 +140,7 @@ if st.button("Show Model Results"):
 
 
 st.header("Try It Yourself!")
-st.write("Put one of the items in the dataset into our system.")
+st.write("Put one of the items in the dataset into our system. \n Note that the model rounds up/down. If the resulting vector is closer to one, the AI model will return the output as toxic. Conversely, if the resulting vector is closer to 0, the model will output 'not toxic'.")
 user_prediction = st.number_input("Input the line of the ToxDF dataset you would like the AI to predict for:", 1, 10000, 200)
 
 user_prediction = int(user_prediction)
