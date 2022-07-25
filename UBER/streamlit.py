@@ -125,7 +125,7 @@ if st.button('Show preprocessed data'):
 
 st.write("Here you can see the architecture of our machine-learning model.")
 
-if st.button("Show Model Results"):
+if st.button("Show Model Architecture"):
     modelimg = Image.open('UBER/model.png')
     st.image(modelimg)
 
