@@ -45,7 +45,7 @@ def prediction(x):
     #plt.show()
     #plt.savefig("SMILE_rendering.png", bbox_inches = 'tight')
     #st.image(".\SMILE_rendering.png")
-    #st.write("The AI Model's prediction", bottles)
+    st.write("The AI Model's prediction", bottles)
     st.write("SMART's Prediction is: \n")
     if(bottles >= 0.5):
         st.subheader("Toxic!")
