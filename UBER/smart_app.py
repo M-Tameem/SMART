@@ -7,20 +7,27 @@ from keras.models import load_model
 import numpy as np
 import random
 from PIL import Image
+import os
 #from rdkit import Chem
 #from rdkit.Chem import Draw
 import matplotlib.pyplot as plt
 # %matplotlib inline
 
-with open('UBER/styles.css') as f:
-    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+def load_model(model_path):
+    if os.path.exists(model_path):
+        return keras.models.load_model(model_path)
+    else:
+        print(f"Model file not found: {model_path}")
+        return None
+
+model = load_model('UBER/smartmodel.h5')
 
 # Make numpy values easier to read.
 np.set_printoptions(precision=3, suppress=True)
 
-tox_df = pd.read_csv('UBER/tcfinalit2.csv')
+tox_df = pd.read_csv('tcfinalit2.csv')
 
-model = load_model('UBER/smartmodel.h5')
+model = load_model('smartmodel.h5')
 
 # Smiles representation and chemical tests
 SMILES_COL = ["smiles",]
