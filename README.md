@@ -1,1 +1,1 @@
-Live demo hosted on https://m-tameem-smart.streamlit.app/
+Live demo hosted on https://mtameem-smart.streamlit.app/
