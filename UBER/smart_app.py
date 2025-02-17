@@ -13,12 +13,13 @@ import os
 import matplotlib.pyplot as plt
 # %matplotlib inline
 
-model_path = os.path.join(os.path.dirname(__file__), "UBER", "smartmodel.h5")
+model_path = os.path.abspath(os.path.join(os.getcwd(), "UBER", "smartmodel.h5"))
 
 if os.path.exists(model_path):
     model = load_model(model_path)
+    print(f"✅ Model loaded from: {model_path}")
 else:
-    print(f"Model file not found: {model_path}")
+    print(f"❌ Model file not found: {model_path}")
     model = None
     
 # Make numpy values easier to read.
