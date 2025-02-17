@@ -13,24 +13,18 @@ import os
 import matplotlib.pyplot as plt
 # %matplotlib inline
 
-model_path = "smartmodel.h5"
+model_path = os.path.join(os.path.dirname(__file__), "UBER", "smartmodel.h5")
+
 if os.path.exists(model_path):
     model = load_model(model_path)
 else:
     print(f"Model file not found: {model_path}")
     model = None
-
-print("Current working directory:", os.getcwd())
-print("Files in directory:", os.listdir())
-model_path = os.path.join(os.path.dirname(__file__), "smartmodel.h5")
-print(model_path)
-
+    
 # Make numpy values easier to read.
 np.set_printoptions(precision=3, suppress=True)
 
 tox_df = pd.read_csv('tcfinalit2.csv')
-
-model = load_model('smartmodel.h5')
 
 # Smiles representation and chemical tests
 SMILES_COL = ["smiles",]
