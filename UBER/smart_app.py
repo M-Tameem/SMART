@@ -13,14 +13,17 @@ import os
 import matplotlib.pyplot as plt
 # %matplotlib inline
 
-def load_model(model_path):
-    if os.path.exists(model_path):
-        return keras.models.load_model(model_path)
-    else:
-        print(f"Model file not found: {model_path}")
-        return None
+model_path = "smartmodel.h5"
+if os.path.exists(model_path):
+    model = load_model(model_path)
+else:
+    print(f"Model file not found: {model_path}")
+    model = None
 
-model = load_model('smartmodel.h5')
+print("Current working directory:", os.getcwd())
+print("Files in directory:", os.listdir())
+model_path = os.path.join(os.path.dirname(__file__), "smartmodel.h5")
+print(model_path)
 
 # Make numpy values easier to read.
 np.set_printoptions(precision=3, suppress=True)
