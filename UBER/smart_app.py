@@ -20,7 +20,7 @@ def load_model(model_path):
         print(f"Model file not found: {model_path}")
         return None
 
-model = load_model('UBER/smartmodel.h5')
+model = load_model('smartmodel.h5')
 
 # Make numpy values easier to read.
 np.set_printoptions(precision=3, suppress=True)
