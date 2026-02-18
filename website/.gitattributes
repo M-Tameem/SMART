@@ -2,3 +2,4 @@ vendor/** linguist-vendored
 vendor/** -diff
 css/** linguist-vendored -diff
 vendor/**/*.js linguist-vendored -diff
+js/** linguist-vendored -diff
