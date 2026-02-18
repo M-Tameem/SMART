@@ -1,4 +1,4 @@
-# SMART — Small Molecule Analysis & Reporting Tool
+# SMART - Small Molecule Analysis & Reporting Tool
 
 > **Uber Hackathon Finalist** 🏆
 
@@ -12,9 +12,9 @@ An end-to-end machine learning system that predicts the **toxicity of chemical c
 
 Tox21 is one of the most widely used benchmarks in computational toxicology. SMART wraps it in a deployable, interactive app:
 
-1. **Preprocessing** — raw SMILES strings are character-level tokenised and padded; the 12 assay columns are one-hot encoded.
-2. **Dual-path neural network** — one branch processes the encoded SMILES through an embedding + global average pooling; the other processes the one-hot assay features through a dense layer. Both branches are concatenated before a sigmoid output.
-3. **Result** — the model outputs a score in [0, 1]; ≥ 0.5 → Toxic, < 0.5 → Not Toxic.
+1. **Preprocessing** - raw SMILES strings are character-level tokenised and padded; the 12 assay columns are one-hot encoded.
+2. **Dual-path neural network** - one branch processes the encoded SMILES through an embedding + global average pooling; the other processes the one-hot assay features through a dense layer. Both branches are concatenated before a sigmoid output.
+3. **Result** - the model outputs a score in [0, 1]; ≥ 0.5 → Toxic, < 0.5 → Not Toxic.
 
 Training reached **99.99 % validation accuracy** on the 11 758-compound dataset after 10 epochs.
 
@@ -97,7 +97,7 @@ Assay input (36-dim one-hot vector)
     └─ Dense(64, relu)
 ```
 
-Total parameters: **6 081** — deliberately small so the model ships with the repo (`smartmodel.h5`, 109 KB).
+Total parameters: **6 081** - deliberately small so the model ships with the repo (`smartmodel.h5`, 109 KB).
 
 ---
 
