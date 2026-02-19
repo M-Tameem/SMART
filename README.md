@@ -16,8 +16,6 @@ Tox21 is one of the most widely used benchmarks in computational toxicology. SMA
 2. **Dual-path neural network** - one branch processes the encoded SMILES through an embedding + global average pooling; the other processes the one-hot assay features through a dense layer. Both branches are concatenated before a sigmoid output.
 3. **Result** - the model outputs a score in [0, 1]; ≥ 0.5 → Toxic, < 0.5 → Not Toxic.
 
-Training reached **99.99 % validation accuracy** on the 11 758-compound dataset after 10 epochs.
-
 ---
 
 ## Repo layout
